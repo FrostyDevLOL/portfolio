@@ -10,17 +10,18 @@ function useInView(ref: React.RefObject<HTMLElement>, options = {}) {
   const [isInView, setIsInView] = useState(false)
 
   useEffect(() => {
+    const currentRef = ref.current;
     const observer = new IntersectionObserver(([entry]) => {
       setIsInView(entry.isIntersecting)
     }, options)
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [ref, options])
@@ -87,7 +88,7 @@ export function BlockPage() {
             </div>
             <div className="max-w-2xl">
               <p className="text-lg mb-4">
-                Hello! I'm Jairus Paul Victor, a 14-year-old web developer and student. I make websites and webapps and I want to learn new coding languages. My goal is to make a successful webapp and have 1000s of users using it daily.
+                Hello! I&apos;m Jairus Paul Victor, a 14-year-old web developer and student. I make websites and webapps and I want to learn new coding languages. My goal is to make a successful webapp and have 1000s of users using it daily.
               </p>
             </div>
           </div>

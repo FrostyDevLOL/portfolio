@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/your-repo-name', // Replace with your repository name
+  basePath: '/portfolio', // Changed to your actual repo name
 }
 
 module.exports = nextConfig 
